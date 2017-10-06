@@ -1,13 +1,18 @@
 {
   "name": "chai-kerouac-handler",
   "version": "0.0.0",
-  "description": "",
+  "description": "Helpers for testing Kerouac handlers with the Chai assertion library.",
+  "keywords": [
+    "chai",
+    "kerouac"
+  ],
   "author": {
     "name": "Jared Hanson",
     "email": "jaredhanson@gmail.com",
     "url": "http://jaredhanson.net/"
   },
-  "repository": {    "type": "git",
+  "repository": {
+    "type": "git",
     "url": "git://github.com/jaredhanson/chai-kerouac-handler.git"
   },
   "bugs": {
