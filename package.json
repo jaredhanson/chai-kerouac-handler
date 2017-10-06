@@ -26,6 +26,9 @@
     }
   ],
   "main": "./lib",
+  "dependencies": {
+    "utils-flatten": "^1.0.0"
+  },
   "devDependencies": {
     "make-node": "^0.3.0",
     "mocha": "^2.0.0",
