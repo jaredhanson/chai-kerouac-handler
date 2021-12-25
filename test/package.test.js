@@ -1,13 +1,19 @@
 /* global describe, it */
 
-var pkg = require('..');
 var expect = require('chai').expect;
+var chai = require('chai');
+var helper = require('..');
 
+
+before(function() {
+  chai.use(helper);
+});
 
 describe('chai-kerouac-handler', function() {
   
-  it('should export hello world', function() {
-    expect(pkg.hello).to.equal('world');
+  it('should add kerouac helper to chai', function() {
+    expect(chai.kerouac).to.be.an('object');
+    expect(chai.kerouac.use).to.be.a('function');
   });
   
 });
