@@ -27,7 +27,8 @@
   ],
   "main": "./lib",
   "dependencies": {
-    "array-flatten": "1.1.1"
+    "array-flatten": "1.1.1",
+    "setprototypeof": "1.1.1"
   },
   "devDependencies": {
     "make-node": "^0.3.0",
