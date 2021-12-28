@@ -13,7 +13,7 @@ describe('chai-kerouac-handler', function() {
   
   it('should add kerouac helper to chai', function() {
     expect(chai.kerouac).to.be.an('object');
-    expect(chai.kerouac.use).to.be.a('function');
+    expect(chai.kerouac.page).to.be.a('function');
   });
   
 });

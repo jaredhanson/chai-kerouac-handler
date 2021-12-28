@@ -11,7 +11,7 @@ describe('Test', function() {
   describe('#request', function() {
     
     it('should invoke sync callback', function(done) {
-      chai.kerouac.use(function(page, next) {
+      chai.kerouac.page(function(page, next) {
         page.end();
       })
       .request(function(page) {
@@ -22,7 +22,7 @@ describe('Test', function() {
     }); // should invoke sync callback
     
     it('should invoke async callback', function(done) {
-      chai.kerouac.use(function(page, next) {
+      chai.kerouac.page(function(page, next) {
         page.end();
       })
       .request(function(page, cb) {
@@ -38,7 +38,7 @@ describe('Test', function() {
   describe('#finish', function() {
   
     it('should invoke callback', function(done) {
-      chai.kerouac.use(function(page, next) {
+      chai.kerouac.page(function(page, next) {
         page.end();
       })
       .finish(function() {
@@ -53,7 +53,7 @@ describe('Test', function() {
   describe('#next', function() {
   
     it('should invoke callback', function(done) {
-      chai.kerouac.use(function(page, next) {
+      chai.kerouac.page(function(page, next) {
         next();
       })
       .next(function(err, page) {
@@ -66,7 +66,7 @@ describe('Test', function() {
     }); // should invoke callback
     
     it('should invoke callback with error', function(done) {
-      chai.kerouac.use(function(page, next) {
+      chai.kerouac.page(function(page, next) {
         next(new Error('something went wrong'));
       })
       .next(function(err, page) {
