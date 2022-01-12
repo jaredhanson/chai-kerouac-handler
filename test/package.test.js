@@ -138,6 +138,18 @@ describe('chai-kerouac-handler', function() {
       }).to.throw("expected { Object (_events, _eventsCount, ...) } to have property '_content'");
     }); // content method
     
+    it('beginWith method', function() {
+      expect('# Hello').to.beginWith('# H');
+      
+      expect(function () {
+        expect('# Hello').to.beginWith('# G');
+      }).to.throw("expected '# Hello' to begin with '# G'");
+      
+      expect(function () {
+        expect('# Hello').to.not.beginWith('# H');
+      }).to.throw("expected '# Hello' to not begin with '# H'");
+    });
+    
   });
   
 });
