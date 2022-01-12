@@ -70,43 +70,41 @@ describe('chai-kerouac-handler', function() {
         expect(page).to.not.have.deep.locals({ title: 'Example', description: 'This website is for use in illustrative examples.' });
       }).to.throw("expected { Object (title, description) } to not deeply equal { Object (title, description) }");
       
-      /*
       expect(function () {
-        expect(res).to.include.locals([ 'username', 'name' ]);
-      }).to.throw("expected { Object (title, description) } to contain keys 'username', and 'name'");
+        expect(page).to.include.locals([ 'subtitle', 'title' ]);
+      }).to.throw("expected { Object (title, description) } to contain keys 'subtitle', and 'title'");
       
       expect(function () {
-        expect(res).to.not.include.locals([ 'name' ]);
-      }).to.throw("expected { Object (title, description) } to not contain key 'name'");
+        expect(page).to.not.include.locals([ 'title' ]);
+      }).to.throw("expected { Object (title, description) } to not contain key 'title'");
       
       expect(function () {
-        expect(res).to.include.any.locals([ 'username', 'email' ]);
-      }).to.throw("expected { Object (title, description) } to have keys 'username', or 'email'");
+        expect(page).to.include.any.locals([ 'subtitle', 'url' ]);
+      }).to.throw("expected { Object (title, description) } to have keys 'subtitle', or 'url'");
       
       expect(function () {
-        expect(res).to.not.include.any.locals([ 'username', 'name' ]);
-      }).to.throw("expected { Object (title, description) } to not have keys 'username', or 'name'");
+        expect(page).to.not.include.any.locals([ 'subtitle', 'title' ]);
+      }).to.throw("expected { Object (title, description) } to not have keys 'subtitle', or 'title'");
       
       expect(function () {
-        expect(res).to.include.all.locals([ 'name' ]);
-      }).to.throw("expected { Object (title, description) } to have key 'name'");
+        expect(page).to.include.all.locals([ 'title' ]);
+      }).to.throw("expected { Object (title, description) } to have key 'title'");
       
       expect(function () {
-        expect(res).to.include.all.locals([ 'username', 'name', 'csrfToken' ]);
-      }).to.throw("expected { Object (title, description) } to have keys 'username', 'name', and 'csrfToken'");
+        expect(page).to.include.all.locals([ 'subtitle', 'title', 'description' ]);
+      }).to.throw("expected { Object (title, description) } to have keys 'subtitle', 'title', and 'description'");
       
       expect(function () {
-        expect(res).to.not.include.all.locals([ 'name', 'csrfToken' ]);
-      }).to.throw("expected { Object (title, description) } to not have keys 'name', and 'csrfToken'");
+        expect(page).to.not.include.all.locals([ 'title', 'description' ]);
+      }).to.throw("expected { Object (title, description) } to not have keys 'title', and 'description'");
       
       expect(function () {
         expect({}).to.have.locals({ foo: 'bar' });
-      }).to.throw('expected {} to be an instance of Response');
+      }).to.throw('expected {} to be an instance of Page');
       
       expect(function () {
-        expect(new Response()).to.have.locals({ foo: 'bar' });
+        expect(new Page()).to.have.locals({ foo: 'bar' });
       }).to.throw("expected { Object (_events, _eventsCount, ...) } to have property 'locals'");
-      */
     }); // locals method
     
   });
