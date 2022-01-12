@@ -138,6 +138,28 @@ describe('chai-kerouac-handler', function() {
       }).to.throw("expected { Object (_events, _eventsCount, ...) } to have property '_content'");
     }); // content method
     
+    it('format method', function() {
+      var page = new Page();
+      page._format = 'md';
+      expect(page).to.have.format('md');
+      
+      expect(function () {
+        expect(page).to.have.format('adoc');
+      }).to.throw("expected page to compile format 'adoc' but compiled 'md'");
+      
+      expect(function () {
+        expect(page).to.not.have.format('md');
+      }).to.throw("expected page to not compile format 'md'");
+      
+      expect(function () {
+        expect({}).to.have.format('md');
+      }).to.throw('expected {} to be an instance of Page');
+      
+      expect(function () {
+        expect(new Page()).to.have.format('md');
+      }).to.throw("expected { Object (_events, _eventsCount, ...) } to have property '_format'");
+    }); // format method
+    
     it('beginWith method', function() {
       expect('# Hello').to.beginWith('# H');
       

@@ -31,7 +31,7 @@ describe('Page', function() {
       })
       .finish(function() {
         expect(this._content).to.equal('# Hello');
-        expect(this._type).to.equal('md');
+        expect(this._format).to.equal('md');
         expect(this._layout).to.equal('index');
         done();
       })
