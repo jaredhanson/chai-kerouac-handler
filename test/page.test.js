@@ -30,7 +30,7 @@ describe('Page', function() {
         expect(rv).to.be.undefined;
       })
       .finish(function() {
-        expect(this._text).to.equal('# Hello');
+        expect(this._content).to.equal('# Hello');
         expect(this._type).to.equal('md');
         expect(this._layout).to.equal('index');
         done();
