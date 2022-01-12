@@ -111,6 +111,7 @@ describe('chai-kerouac-handler', function() {
       var page = new Page();
       page._content = '# Hello';
       expect(page).to.have.content('# Hello');
+      expect(page).to.beginWith.content('# H')
       
       expect(function () {
         expect(page).to.have.content('# Goodbye');
@@ -119,6 +120,14 @@ describe('chai-kerouac-handler', function() {
       expect(function () {
         expect(page).to.not.have.content('# Hello');
       }).to.throw("expected page to not have content '# Hello'");
+      
+      expect(function () {
+        expect(page).to.beginWith.content('# G');
+      }).to.throw("expected page to begin with content '# G' but began with '# H'");
+      
+      expect(function () {
+        expect(page).to.not.beginWith.content('# H');
+      }).to.throw("expected page to not begin with content '# H'");
       
       expect(function () {
         expect({}).to.have.content('# Hello');
