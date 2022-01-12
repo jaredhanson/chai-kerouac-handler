@@ -107,6 +107,28 @@ describe('chai-kerouac-handler', function() {
       }).to.throw("expected { Object (_events, _eventsCount, ...) } to have property 'locals'");
     }); // locals method
     
+    it('content method', function() {
+      var page = new Page();
+      page._content = '# Hello';
+      expect(page).to.have.content('# Hello');
+      
+      expect(function () {
+        expect(page).to.have.content('# Goodbye');
+      }).to.throw("expected page to have content '# Goodbye' but had '# Hello'");
+      
+      expect(function () {
+        expect(page).to.not.have.content('# Hello');
+      }).to.throw("expected page to not have content '# Hello'");
+      
+      expect(function () {
+        expect({}).to.have.content('# Hello');
+      }).to.throw('expected {} to be an instance of Page');
+      
+      expect(function () {
+        expect(new Page()).to.have.content('# Hello');
+      }).to.throw("expected { Object (_events, _eventsCount, ...) } to have property '_content'");
+    }); // content method
+    
   });
   
 });
