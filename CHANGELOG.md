@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Support for `cb` argument to `Page#render`.
+- Support for `cb` argument to `Page#compile`.
+
 ## [0.0.1] - 2024-03-11
 
 - Initial release.
