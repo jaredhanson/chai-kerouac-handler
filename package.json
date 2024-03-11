@@ -1,6 +1,6 @@
 {
   "name": "chai-kerouac-handler",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Helpers for testing Kerouac handlers with the Chai assertion library.",
   "keywords": [
     "chai",
